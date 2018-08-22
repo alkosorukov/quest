@@ -1,0 +1,44 @@
+https://github.com/alkosorukov/quest - запускаться не будет, если надо, я подключу webpack-dev-server
+1.
+При первой загрузке если в  state.user.token пусто - редирект на страницу авторизации (\src\Pages\Auth\) Если в локалсторедж (ЛС) токен есть (см componentDidMount) - делаем запрос на сервер и узнаем токен. Если и в ЛС пусто - показываем форму авторизации (компонент \src\Interface\User\SignIn\). Все какбы круто и работает, но сервак выдает JWT токен, который устаревает через час -> на сервер нужно слать постоянно новые запросы. А вот где запустить таймер? Можнно было бы в \src\Pages\Auth\Index.js (асинки и эвейты забыл убрать, потом)) ):
+
+async componentDidMount() {
+        const { dispatch, token } = this.props
+        const tokenLS = localStorage.getItem('token')
+console.log('tokenLS', tokenLS)
+        if (!token && tokenLS) {
+            await dispatch(showLoader())
+            await dispatch(authorizeToken(tokenLS))
+
+			setInterval(()=> authorizeToken(tokenLS),58*60*1e3)
+            await dispatch(hideLoader())
+
+        }
+    }
+
+Но, юзер может выйти из системы (компонент \src\Interface\PanelMenu\Index.js: <Link to="/auth" className="btn btn-primary usermenu-body__exit-button" onClick={this.click}>Выход</Link>) и тогда этот таймер надо как-то выключить. А еще юзер может захотеть поменять пароль (компонент \src\Interface\User\EditUser\Index.js) Если смена пароля произошла успешно - возвращается новый токен и надо бы выключить старый таймер и запустить новый. В общем х.з. как и где это реализовать. Впрлне возм., что архитектура не ахти
+
+2. При компиляции вебпаг в консоли выводит уйму всякого говна. По идее это можно настроить в https://webpack.js.org/configuration/dev-server/#devserver-stats- но делал и stats: 'errors-only' и 'minimal' - толку чуть. Как бы убрать лишнее.
+
+3. HMR работает под опен сервер? не смог настроить. под webpack-dev-server все ок.
+
+4. rootSaga.js: 
+export default function* rootSaga() {
+    yield all([
+        fork(authorizeSaga),
+        fork(authorizeWithTokenSaga),
+        fork(editUserSaga)
+    ])
+}
+
+а нормально тут форкать? Может перед экспортом? 
+
+5. const submut = ({ oldPassword, password, confirmPassword }) => new Promise((resolve, reject) => {
+        dispatch(changePassword(oldPassword, password, confirmPassword, token, resolve, reject, resetForm))
+    })
+
+	так вобще не возбраняется диспатч вызывать или лучше через mapDispatchToProps?
+
+6. попробовал мой дружбан flow-не понравилось. Зато он полюбил тайпскрипт и теперь выносит мне мозг, когда показывает свой код. Что лучше в проект внедрить: flow или на ts перевести? Какие нынче тренды?
+
+7. допустим есть страница. делается какое-то действо и все ацки тоормозит (медленно перерендеривается). Как узнать в каком компоненте не порядок?
