@@ -1,0 +1,8 @@
+.find__search-ico {
+    width: 1rem;
+    cursor: pointer;
+}
+
+.find__search-ico:hover {
+    opacity: 0.7
+}

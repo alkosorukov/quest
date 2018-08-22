@@ -1,0 +1,214 @@
+@font-face {
+    font-family: 'HelveticaNeueCyr';
+    src: url('fonts/HelveticaNeueCyr.woff2') format('woff2'),
+        url('fonts/HelveticaNeueCyr.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HelveticaNeueLight';
+    src: url('fonts/HelveticaNeueLight.woff2') format('woff2'),
+        url('fonts/HelveticaNeueLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    height: 100%;
+}
+
+.content {
+    flex: 1 0 auto;
+    /*height: 100%;*/
+    min-height: 32rem;
+    padding: 6rem 3.25rem 6rem 7.125rem;
+}
+
+.content--intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    padding: 4.37rem 0 4.06rem;
+}
+
+svg {
+    width: 100%;
+    display: block;
+}
+
+.ml-20 {
+    margin-left: 1.25rem;
+}
+
+.ml-38 {
+    margin-left: 2.375rem;
+}
+
+.form__title {
+    font-size: 1.125rem;
+    margin-bottom: 0.94rem;
+}
+
+/* перезатираем бутстрап */
+
+html {   
+    height: 100%;
+}
+
+body {
+    font-family: 'HelveticaNeueCyr';
+    overflow-y: scroll;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    line-height: normal;
+    color: #4a4a4a;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-family: 'HelveticaNeueLight';
+    margin-bottom: 2.5rem;
+}
+
+.invalid-feedback {
+    display: block;
+    font-size: 0.75rem;
+    line-height: 1.2;
+    min-height: 0.9375rem;
+    margin: 0.3125rem 0 0.5rem;
+}
+
+.is-invalid,
+.invalid-feedback {
+    color:#f26065;
+}
+
+.form-control.is-invalid {
+    border-color: #f26065;
+}
+
+.input-group {
+    margin-bottom: 1.75rem;
+}
+.input-group + .invalid-feedback {
+    margin-top:  -1.438rem;
+}
+
+.form-control {
+    height: 2.5rem;
+    line-height: 1;
+    padding: 10px 24px 10px;
+    border-radius: 0.1875rem;
+    border-color: #d7dce1;
+}
+
+.form-control:focus{
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25), 
+    inset 0 0 0 50px #fff!important;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25), inset 0 0 0 50px #fff!important;
+    -webkit-text-fill-color: #4a4a4a !important;
+    color: #4a4a4a !important;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #9b9b9b;
+    font-size: 0.75rem;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #9b9b9b;
+    font-size: 0.75rem;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #9b9b9b;
+    font-size: 0.75rem;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #9b9b9b;
+    font-size: 0.75rem;
+}
+
+.input-group-text {
+    background: none;
+    border-right: 0;
+}
+
+.input-group > .form-control:not(:first-child), 
+.input-group > .custom-select:not(:first-child) {
+    border-radius: 0.1875rem;
+}
+
+.input-group-prepend {
+    position: absolute;
+    width: 2.5rem;
+    height: 100%;
+    display: flex;
+    padding:0;
+    justify-content: center;
+    align-items: center;
+    color: #dadadb;
+    z-index: 10;
+    top: 0;
+    left:0;
+}
+
+.input-group-prepend svg {
+    max-width: 0.8125rem;
+    max-height: 1.125rem;
+}
+
+.input-group-prepend + input {
+    padding-left: 2.875rem;
+}
+
+.btn {
+    padding: 0.625rem 0.75rem;
+    line-height: 1.6;
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    border: 0;
+    border-radius: 3px;
+    background: #f26065;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.07);
+}
+
+.btn-primary:hover {
+    background: #e1595e;
+}
+
+.btn-primary.disabled, 
+.btn-primary:disabled {
+    background:#d7dce1;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    background: #e1595e;
+}
+
+.inline-btn {
+    display: inline-block;
+    padding: 0;
+    line-height: 1;
+    border: 0;
+    cursor: pointer;
+    background: none;
+}
+
+.popover {
+    border: 0; 
+    max-width: none;
+}
+.popover-body {
+    padding: 1.875rem 0.9375rem; 
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+}

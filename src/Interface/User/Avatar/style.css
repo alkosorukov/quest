@@ -1,0 +1,43 @@
+.your-avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 3px;
+    margin: 0;
+    display: flex;
+    overflow: hidden;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-color: #d8d8d8;
+}
+
+.edit-avatar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 1.125rem;
+    background-color: rgba(0, 0, 0, 0.32);
+}
+
+.change-avatar-btn {
+    color: #ffffff;
+    font-size: 0.625rem;    
+}
+
+.your-info__name {
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.your-info__role {
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.your-info__email {
+    font-size: 0.75rem;
+    color: #351e58;
+    margin: 0.75rem 0 0;
+}

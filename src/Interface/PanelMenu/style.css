@@ -1,0 +1,66 @@
+a.header-tool__enter,
+a.header-tool__enter:hover {
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9375rem;
+}
+
+a.header-tool__enter:hover {
+    opacity: 0.7;
+}
+
+.usermenu {
+    
+    max-width: 363px;
+    background-color: #ffffff;
+}
+
+.usermenu-body {
+    width: 20.75rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.usermenu-body__avatar {
+    display: block;
+    margin: 0;
+    width: 66.2px;
+    height: 69px;
+    border-radius: 50%; 
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.usermenu-body__info {
+    margin: 0 0.6875rem;
+    flex-grow: 2;
+    line-height: 1;
+}
+
+.usermenu-body__info-name {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+.usermenu-body__info-mail {
+    font-size: 12px;
+    font-weight: 300;
+    color: #4a4a4a;
+    margin: 0.3125rem 0 0;
+}
+
+.usermenu-body__info-name {
+    margin: 0;
+}
+
+.usermenu-body__exit-button {
+    align-self: center;
+    width: 6.25rem;
+}
+
+.usermenu-body__change-acc {
+    margin-top: 1rem;
+    display: inline-block;
+    text-decoration: underline;
+}

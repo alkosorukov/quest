@@ -1,0 +1,33 @@
+.welcome-user {
+    position: absolute;
+    display: flex;
+    color: #fff;
+    font-size: 1.5rem;
+    font-family: 'HelveticaNeueLight';
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    z-index: 1;
+    padding-left: 6.875rem;
+    background-color: #371b57;
+    animation: hidewelcome 2.5s forwards;
+}
+
+
+@keyframes hidewelcome {
+    80% { 
+        opacity: 1;
+        z-index: 1;
+    }
+    99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}

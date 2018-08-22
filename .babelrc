@@ -1,0 +1,16 @@
+{
+    "presets": [
+        "env", "react"
+    ],
+    "plugins": [
+        "transform-class-properties", 
+        "transform-async-to-generator",
+	"transform-object-rest-spread",
+	"transform-react-jsx-source",
+        "syntax-async-functions",
+        ["transform-runtime", {
+            "regenerator": true
+        }],
+        "react-hot-loader/babel"
+    ]
+}

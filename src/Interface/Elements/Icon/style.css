@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'IconsFont';
+    src: url('fonts/icons-font.woff2') format('woff2'),
+        url('fonts/icons-font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    display: inline-block;
+    font-style: normal;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon:before {
+    font-family: 'IconsFont';
+}
+
+.icon-home:before {
+    content: '\E801';
+}
+
+.icon-folder:before {
+    content: '\E804';
+}
+
+.icon-instr:before {
+    content: '\E802';
+}
+
+.icon-add-instr:before {
+    content: '\E803';
+}
+
+.icon-settings:before {
+    content: '\E800';
+}
+
+.icon-lock:before {
+    content: '\E805';
+}
+
+.icon-user:before {
+    content: '\E806';
+}

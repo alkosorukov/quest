@@ -1,0 +1,13 @@
+.autorise {
+    max-width: 224px;
+}
+
+.autorise__title {
+    font-size: 1.125rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.autorise__button {
+    width: 100%;
+}
